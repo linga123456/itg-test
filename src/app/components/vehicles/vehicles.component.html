@@ -1,0 +1,22 @@
+<div class="container" style="background-color: rgb(230, 238, 235)">
+
+  <div class="row" style="margin: 1em 0" *ngIf="vehicles && vehicles.length > 0">
+
+
+    <div class="col-sm-12 col-md-6 col-lg-4 vehicle-list__item" *ngFor="let vehicle of vehicles; let i = index;">
+      <div class="card mb-4 shadow-sm pd-5">
+        <div class="vehicle-list__image">
+          <img class="card-img-top" src="assets{{vehicle.media[0].url}}" alt="image">
+        </div>
+
+        <div class="card-body" *ngIf="vehicle && vehicle.details">
+          <h4 class="card-title">{{vehicle.details.id}}</h4>
+          <h1>{{vehicle.details.price}}</h1>
+          <p class="card-text" style="padding-right: 5rem">{{vehicle.details.description}}</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
